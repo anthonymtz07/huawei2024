@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+    /*background-image: url('/static/img/background/Negro.jpg');*/
+    background-image: url('/static/img/background/background2.avif');
+    /*background-color: white;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container{
+    margin-top: 5%;
+}

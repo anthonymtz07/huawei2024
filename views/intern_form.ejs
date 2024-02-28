@@ -1,0 +1,96 @@
+<%- include('template/title')%>
+<link rel="stylesheet" href="/static/css/index.css">
+
+<div class="container" style="margin-bottom: 5%;">
+    <div class="row">
+        <form style="margin-top: 5%; background-image: url(static/img/background/huawei_form1.jpg); border-radius: 22px;"
+        action="/mongodb/student_information" method="post">
+            <!--Personal Data-->
+            <div class="row" style="margin-top: 5%;">
+                <h3 class="mb-3" style="text-align: center; color: #FFF;">Personal data</h3>
+                <!--Name-->
+                <div class="col-5 mb-3">
+                    <label for="studentname" class="form-label" style="color: #FFF;">Name:</label>
+                    <input type="text" class="form-control" id="studentname" name="studentname">
+                </div>
+                <!--Last Name-->
+                <div class="col-5 mb-3">
+                    <label for="studentlastname" class="form-label" style="color: #FFF;">Last name:</label>
+                    <input type="text" class="form-control" id="studentlastname" name="studentlastname">
+                </div>
+                <!--Age-->
+                <div class="col-2 mb-3">
+                    <label for="studentage" class="form-label" style="color: #FFF;">Age:</label>
+                    <input type="number" class="form-control" id="studentage" name="studentage">
+                </div>
+                <!--Phone-->
+                <div class="col-6">
+                    <label for="studentphone" class="form-label" style="color: #FFF;">Phone:</label>
+                    <input type="number" class="form-control" id="studentphone" name="studentphone">
+                </div>
+                <!--Email-->
+                <div class="col-6">
+                    <label for="studentemail" class="form-label" style="color: #FFF;">Email:</label>
+                    <input type="email" class="form-control" id="studentemail" name="studentemail">
+                </div>
+            </div>
+
+            <!--Student Information-->
+            <div class="row" style="margin-top: 5%;">
+                <h3 class="mb-3" style="text-align: center; color: #FFF;">Student information</h3>
+                <!--career-->
+                <div class="col-6 mb-3">
+                    <label for="studentcareer" class="form-label" style="color: #FFF;">Career:</label>
+                    <input type="text" class="form-control" id="studentcareer" name="studentcareer">
+                </div>
+                <!--stat year-->
+                <div class="col-3 mb-3">
+                    <label for="startyearcareer" class="form-label" style="color: #FFF;">Start:</label>
+                    <input type="date" class="form-control" id="startyearcareer" name="startyearcareer">
+                </div>
+                <!--End year-->
+                <div class="col-3 mb-3">
+                    <label for="endyearcareer" class="form-label" style="color: #FFF;">End:</label>
+                    <input type="date" class="form-control" id="endyearcareer" name="endyearcareer">
+                </div>
+                <!--University-->
+                <div class="col-6 mb-3">
+                    <label for="studentuniversity" class="form-label" style="color: #FFF;">University:</label>
+                    <input type="text" class="form-control" id="studentuniversity" name="studentuniversity">
+                </div>
+                <!--level-->
+                <div class="col-3 mb-3">
+                    <label for="studentlevel" class="form-label" style="color: #FFF;">Grade:</label>
+                    <input type="number" class="form-control" id="studentlevel" name="studentlevel">
+                </div>
+                <!--level-->
+                <div class="col-3 mb-3">
+                    <label for="englishlevel" class="form-label" style="color: #FFF;">English level:</label>
+                    <input type="text" class="form-control" id="englishlevel" name="englishlevel">
+                </div>
+            </div>
+
+            <!--More information-->
+            <div class="row" style="margin-top: 5%;">
+                <h3 class="mb-3" style="text-align: center; color: #FFF;">More information</h3>
+                <!--Cv-->
+                <div class="col-6 mb-5">
+                    <label for="studentcv" class="form-label" style="color: #FFF;">CV:</label>
+                    <input type="file" class="form-control" id="studentcv" name="studentcv">
+                </div>
+                <!--photo-->
+                <div class="col-6 mb-5">
+                    <label for="studentphoto" class="form-label" style="color: #FFF;">Photo:</label>
+                    <input type="image" class="form-control" id="studentphoto" name="studentphoto">
+                </div>
+            </div>
+    
+            <button type="submit" class="btn mb-5" style="background-color:  #B5070E; color: #FFF;">Submit</button>
+        </form>
+    </div>    
+</div>
+
+
+    
+
+  <%- include('template/end')%>

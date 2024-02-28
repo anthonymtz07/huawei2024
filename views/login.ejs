@@ -1,0 +1,29 @@
+<%- include('template/title')%>
+<link rel="stylesheet" href="/static/css/index.css">
+
+<div class="row">
+    <!--Presentation-->
+    <div class="col-6" style="background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <img src="static/img/perfiles/logo_user.png" alt="404Imagen" width="150px" height="150px">
+        <form style="margin-top: 5%; margin-bottom: 5%; margin-left: 3%; margin-right: 3%;">
+            <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label" style="color: white;">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text" style="color: white;">We'll never share your email and password with anyone else.</div>
+            </div>
+            <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label" style="color: white;">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn" style="background-color: #B5070E; color: #FFF;">Login</button>
+        </form>
+    </div>
+    <div class="col-6" style="padding: 0">
+        <img src="static/img/background/huawei_fondo.jpg" alt="Descripción de la imagen" style="width: 100%; height: auto; display: block;">
+    </div>
+    
+</div>
+
+    
+
+  <%- include('template/end')%>
