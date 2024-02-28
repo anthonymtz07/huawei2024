@@ -30,7 +30,7 @@ let Student = new Schema ({
         type: String
     },
     studentlevel: {
-        type: Number
+        type: String
     },
     englishlevel: {
         type: String

@@ -2,86 +2,108 @@
 <link rel="stylesheet" href="/static/css/index.css">
 
 <div class="container" style="margin-bottom: 5%;">
-    <div class="row">
-        <form style="margin-top: 5%; background-image: url(static/img/background/huawei_form1.jpg); border-radius: 22px;"
-        action="/mongodb/student_information" method="post">
+    <div class="row" style="display: flex; align-items: center; justify-content: center;">
+        <form style="margin-top: 5%; background-color: #FFF; border-radius: 22px; width: 950px; height: auto;"
+         action="/mongodb/student_information" method="post">
+        <center>
+            <img src="static/img/huawei_logo.png" alt="404Image" width="200px" height="200px">
+        </center>
             <!--Personal Data-->
-            <div class="row" style="margin-top: 5%;">
-                <h3 class="mb-3" style="text-align: center; color: #FFF;">Personal data</h3>
+            <div class="row">
+                <h3 class="mb-3" style="text-align: center; color: #000;">Basic Information</h3>
                 <!--Name-->
                 <div class="col-5 mb-3">
-                    <label for="studentname" class="form-label" style="color: #FFF;">Name:</label>
-                    <input type="text" class="form-control" id="studentname" name="studentname">
+                    <label for="studentname" class="form-label" style="color: #000;">Name:</label>
+                    <input type="text" class="form-control" id="studentname" name="studentname" pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+"
+                    placeholder="Please write your name" style="border-color: #000;" title="Please enter only letters" required>
                 </div>
                 <!--Last Name-->
                 <div class="col-5 mb-3">
-                    <label for="studentlastname" class="form-label" style="color: #FFF;">Last name:</label>
-                    <input type="text" class="form-control" id="studentlastname" name="studentlastname">
+                    <label for="studentlastname" class="form-label" style="color: #000;">Last name:</label>
+                    <input type="text" class="form-control" id="studentlastname" name="studentlastname" pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+"
+                    placeholder="Please write your last name" style="border-color: #000;" title="Please enter only letters" required>
                 </div>
                 <!--Age-->
                 <div class="col-2 mb-3">
-                    <label for="studentage" class="form-label" style="color: #FFF;">Age:</label>
-                    <input type="number" class="form-control" id="studentage" name="studentage">
+                    <label for="studentage" class="form-label" style="color: #000;">Age:</label>
+                    <input type="number" placeholder="Write your age" class="form-control" id="studentage" name="studentage" 
+                    min="18" max="60" required title="range 18 - 60 years" style="border-color: #000;">
                 </div>
                 <!--Phone-->
-                <div class="col-6">
-                    <label for="studentphone" class="form-label" style="color: #FFF;">Phone:</label>
-                    <input type="number" class="form-control" id="studentphone" name="studentphone">
+                <div class="col-6 mb-3">
+                    <label for="studentphone" class="form-label" style="color: #000;">Phone:</label>
+                    <input type="tel" class="form-control" id="studentphone" name="studentphone" pattern="[0-9]+" 
+                    placeholder="Your telephone number" style="border-color: #000;" title="Please enter only numbers" required>
                 </div>
                 <!--Email-->
-                <div class="col-6">
-                    <label for="studentemail" class="form-label" style="color: #FFF;">Email:</label>
-                    <input type="email" class="form-control" id="studentemail" name="studentemail">
+                <div class="col-6 mb-3">
+                    <label for="studentemail" class="form-label" style="color: #000;">Email:</label>
+                    <input type="email" class="form-control" id="studentemail" name="studentemail" style="border-color: #000;" placeholder="Your email" required>
                 </div>
             </div>
 
             <!--Student Information-->
-            <div class="row" style="margin-top: 5%;">
-                <h3 class="mb-3" style="text-align: center; color: #FFF;">Student information</h3>
+            <div class="row">
                 <!--career-->
                 <div class="col-6 mb-3">
-                    <label for="studentcareer" class="form-label" style="color: #FFF;">Career:</label>
-                    <input type="text" class="form-control" id="studentcareer" name="studentcareer">
+                    <label for="studentcareer" class="form-label" style="color: #000;">Career:</label>
+                    <input type="text" class="form-control" id="studentcareer" name="studentcareer" pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+"
+                    placeholder="What's your career?" style="border-color: #000;" title="Please enter only letters" required>
                 </div>
                 <!--stat year-->
                 <div class="col-3 mb-3">
-                    <label for="startyearcareer" class="form-label" style="color: #FFF;">Start:</label>
-                    <input type="date" class="form-control" id="startyearcareer" name="startyearcareer">
+                    <label for="startyearcareer" class="form-label" style="color: #000;">Start:</label>
+                    <input type="date" class="form-control" id="startyearcareer" name="startyearcareer" style="border-color: #000;" required>
                 </div>
                 <!--End year-->
                 <div class="col-3 mb-3">
-                    <label for="endyearcareer" class="form-label" style="color: #FFF;">End:</label>
-                    <input type="date" class="form-control" id="endyearcareer" name="endyearcareer">
+                    <label for="endyearcareer" class="form-label" style="color: #000;">End:</label>
+                    <input type="date" class="form-control" id="endyearcareer" name="endyearcareer" style="border-color: #000;" required>
                 </div>
                 <!--University-->
                 <div class="col-6 mb-3">
-                    <label for="studentuniversity" class="form-label" style="color: #FFF;">University:</label>
-                    <input type="text" class="form-control" id="studentuniversity" name="studentuniversity">
+                    <label for="studentuniversity" class="form-label" style="color: #000;">University:</label>
+                    <input type="text" class="form-control" id="studentuniversity" name="studentuniversity" pattern="[A-Za-zÀ-ÖØ-öø-ÿ]+"
+                    placeholder="What's your university?" style="border-color: #000;" title="Please enter only letters" required>
                 </div>
                 <!--level-->
                 <div class="col-3 mb-3">
-                    <label for="studentlevel" class="form-label" style="color: #FFF;">Grade:</label>
-                    <input type="number" class="form-control" id="studentlevel" name="studentlevel">
+                    <label for="studentlevel" class="form-label" style="color: #000;">Grade:</label>
+                    <select name="studentlevel" id="studentlevel" class="form-control" style="border-color: #000;" required>
+                        <option value="Eighth">8th</option>
+                        <option value="Ninth">9th</option>
+                        <option value="Tenth">10th</option>
+                        <option value="Eleventh">11th</option>
+                        <option value="Twelfth">12th</option>
+                        <option value="Thirteenth">13th</option>
+                    </select>
                 </div>
                 <!--level-->
                 <div class="col-3 mb-3">
-                    <label for="englishlevel" class="form-label" style="color: #FFF;">English level:</label>
-                    <input type="text" class="form-control" id="englishlevel" name="englishlevel">
+                    <label for="englishlevel" class="form-label" style="color: #000;">English level:</label>
+                    <select name="englishlevel" id="englishlevel" class="form-control" style="border-color: #000;" required>
+                        <option value="A3">A3</option>
+                        <option value="B1">B1</option>
+                        <option value="B2">B2</option>
+                        <option value="B3">B3</option>
+                        <option value="C1">C1</option>
+                        <option value="C2">C2</option>
+                        <option value="C2">C3</option>
+                    </select>
                 </div>
             </div>
 
             <!--More information-->
-            <div class="row" style="margin-top: 5%;">
-                <h3 class="mb-3" style="text-align: center; color: #FFF;">More information</h3>
+            <div class="row">
                 <!--Cv-->
                 <div class="col-6 mb-5">
-                    <label for="studentcv" class="form-label" style="color: #FFF;">CV:</label>
-                    <input type="file" class="form-control" id="studentcv" name="studentcv">
+                    <label for="studentcv" class="form-label" style="color: #000;">CV:</label>
+                    <input type="file" class="form-control" id="studentcv" style="border-color: #000;" name="studentcv">
                 </div>
                 <!--photo-->
                 <div class="col-6 mb-5">
-                    <label for="studentphoto" class="form-label" style="color: #FFF;">Photo:</label>
-                    <input type="image" class="form-control" id="studentphoto" name="studentphoto">
+                    <label for="studentphoto" class="form-label" style="color: #000;">Photo:</label>
+                    <input type="image" class="form-control" id="studentphoto" name="studentphoto" style="border-color: #000;">
                 </div>
             </div>
     
