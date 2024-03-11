@@ -1,0 +1,84 @@
+<%- include('template/title')%>
+<link rel="stylesheet" href="/static/css/index.css">
+
+<div class="row">
+    <!--Presentation-->
+    <div class="col-6" style="background-color: black; display: flex; align-items: center; justify-content: center;">
+    <center>
+        <p style="font-size: 62px;">
+            <span style="color: #B5070E;">Intern</span>
+            <span style="color: #FFF;">Feedback</span>
+        </p>
+    </center>
+    </div>
+    <div class="col-6" style="padding: 0; border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
+    <img src="/static/img/background/huaweifont.avif" class="card-img-top" alt="404image">
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      
+      <!--Comments-->
+      <div class="col-12">
+        <!--form-->
+        <form action="/mongodb/comments" method="post">
+         <h2>
+          Do you have any comment? 
+        </h2>
+        <textarea class="form-control mb-2" style="border-color: #000;" id="comment" name="comment" rows="4" cols="50" placeholder="Write yor comment here..."></textarea>
+        <button type="submit" class="btn mb-5" style="background-color: #B5070E; color: #FFF;">Send</button>
+      </form>
+      </div>
+      
+        <div class="col-12">
+            <div class="card mb-3" style="border-color: #000;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="static/img/perfiles/people1.jpg" class="img-fluid rounded-start" alt="404Error">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-text mb-3" style="color: #B5070E;">Maria Fernanda</h4>
+                        <h6 class="card-text" >I liked this part of being a Huawei intern at TAC a lot, I've learned a lot, take an interest in them, I highly recommend them :)</h6>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card mb-3" style="border-color: #000;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="static/img/perfiles/people2.jpg" class="img-fluid rounded-start" alt="404Error">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-text mb-3" style="color: #B5070E;">Jose Armando</h4>
+                        <h6 class="card-text" >Huawei is a very pleasant experience, you enter a world where they teach you to work as a team and be the best version of yourself</h6>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card mb-3" style="border-color: #000;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="static/img/perfiles/people3.png" class="img-fluid rounded-start" alt="404Error">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-text mb-3" style="color: #B5070E;">Patricia Garcia</h4>
+                        <h6 class="card-text" >It is one of my best experiences, the attention you give us and the empathy you have with all of us despite the fact that even college students are not which company has, I am grateful to be one of the participants chosen among many</h6>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('template/end')%>
