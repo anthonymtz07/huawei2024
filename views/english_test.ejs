@@ -1,0 +1,146 @@
+<%- include('template/title')%>
+<link rel="stylesheet" href="/static/css/index.css">
+
+<div class="container" style="margin-bottom: 5%;">
+    <div class="row" style="display: flex; align-items: center; justify-content: center;">
+        <form style="margin-top: 5%; background-color: #FFF; border-radius: 22px; width: 750px; height: auto;"
+         action="/mongodb/english_test" method="post">
+        <center>
+            <img src="static/img/huawei_logo.png" alt="404Image" width="200px" height="200px">
+        </center>
+            <!--Personal Data-->
+            <div class="row">
+                <h3 class="mb-5" style="text-align: center; color: #000;">English test</h3>
+
+                <!--Question 1-->
+                <div class="col-6 mb-3" id="checkbox1">
+                    <label for="checkbox1" class="form-label" style="color: #000;">1. Can I park here?</label><br>
+                    <input  type="radio" id="myCheckbox" name="answer1" value="Sorry, I did that">
+                    <label for="">Sorry, I did that</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer1" value="It's the same place">
+                    <label for="">It's the same place.</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer1" value="Only for half an hour">
+                    <label for="">Only for half an hour.</label> <br>
+                </div>
+
+                <!--Question 2-->
+                <div class="col-6 mb-3" id="checkbox1">
+                    <label for="checkbox2" class="form-label" style="color: #000;">2. What colour will you pain the children's bedroom?</label><br>
+                    <input  type="radio" id="myCheckbox" name="answer2" value="I hope it was right">
+                    <label for="">I hope it was right.</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer2" value="We can't decide">
+                    <label for="">We can't decide.</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer2" value="It wasn't very difficult">
+                    <label for="">It wasn't very difficult</label> <br>
+                </div>
+
+                <!--Question 3-->
+                <div class="col-6 mb-3" id="checkbox1">
+                    <label for="checkbox3" class="form-label" style="color: #000;">3. I can understand this email.</label><br>
+                    <input  type="radio" id="myCheckbox" name="answer3" value="Would you like some help?">
+                    <label for="">Would you like some help?</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer3" value="Don't you know?">
+                    <label for="">Don't you know?</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer3" value="I suppose you can">
+                    <label for="">I suppose you can.</label> <br>
+                </div>
+
+                <!--Question 4-->
+                <div class="col-6 mb-3" id="checkbox4">
+                    <label for="checkbox4" class="form-label" style="color: #000;">4. I'd like two tickets for tomorrow night</label><br>
+                    <input  type="radio" id="myCheckbox" name="answer4" value="How much did you pay?">
+                    <label for="">How much did you pay?</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer4" value="Afternoon and evening.">
+                    <label for="">Afternoon and evening.</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer4" value="I'll just check for you">
+                    <label for="">I'll just check for you.</label> <br>
+                </div>
+
+                <!--Question 5-->
+                <div class="col-6 mb-3" id="checkbox5">
+                    <label for="checkbox5" class="form-label" style="color: #000;">5. Shall we go to the gym now?</label><br>
+                    <input  type="radio" id="myCheckbox" name="answer5" value="I'm too tired">
+                    <label for="">I'm too tired.</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer5" value="It's very good">
+                    <label for="">It's very good.</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer5" value="Not at all">
+                    <label for="">Not at all.</label> <br>
+                </div>
+
+                <!--Question 6-->
+                <div class="col-6 mb-3" id="checkbox6">
+                    <label for="checkbox6" class="form-label" style="color: #000;">6. His eyes were .... bad that he couldn't read the number plate of the car in front.</label><br>
+                    <input  type="radio" id="myCheckbox" name="answer6" value="such">
+                    <label for="">Such.</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer6" value="too">
+                    <label for="">Too</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer6" value="so">
+                    <label for="">So</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer6" value="very">
+                    <label for="">Very</label> <br>
+                </div>
+
+                <!--Question 7-->
+                <div class="col-6 mb-3" id="checkbox7">
+                    <label for="checkbox7" class="form-label" style="color: #000;">7. The company need to decide .... and for all what it's position is on this point.</label><br>
+                    <input  type="radio" id="myCheckbox" name="answer7" value="here">
+                    <label for="">Here</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer7" value="once">
+                    <label for="">Once</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer7" value="first">
+                    <label for="">First</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer7" value="finally">
+                    <label for="">Finally</label> <br>
+                </div>
+
+                <!--Question 8-->
+                <div class="col-6 mb-3" id="checkbox8">
+                    <label for="checkbox8" class="form-label" style="color: #000;">8. Don't put your cup on the ..... if the table - someone will knock it off.</label><br>
+                    <input  type="radio" id="myCheckbox" name="answer8" value="outside">
+                    <label for="">Outside</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer8" value="edge">
+                    <label for="">Edge</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer8" value="bounary">
+                    <label for="">Bounary.</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer8" value="border">
+                    <label for="">Border.</label> <br>
+                </div>
+
+                <!--Question 9-->
+                <div class="col-6 mb-3" id="checkbox9">
+                    <label for="checkbox7" class="form-label" style="color: #000;">9. I'm sorry. I didn't ..... to disturb you.</label><br>
+                    <input  type="radio" id="myCheckbox" name="answer9" value="hope">
+                    <label for="">Hope</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer9" value="think">
+                    <label for="">Think</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer9" value="mean">
+                    <label for="">Mean</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer9" value="suppose">
+                    <label for="">Suppose</label> <br>
+                </div>
+
+                <!--Question 10-->
+                <div class="col-6 mb-3" id="checkbox8">
+                    <label for="checkbox8" class="form-label" style="color: #000;">10. The singer ended the concert ..... her most popular song.</label><br>
+                    <input  type="radio" id="myCheckbox" name="answer10" value="by">
+                    <label for="">By</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer10" value="with">
+                    <label for="">With</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer10" value="in">
+                    <label for="">In</label> <br>
+                    <input  type="radio" id="myCheckbox" name="answer10" value="as">
+                    <label for="">As</label> <br>
+                </div>
+
+                    <div class="col-12" style="text-align: center; margin-top: 3%;">
+                        <button type="submit" class="btn col-6 mb-5" style="background-color:  #B5070E; color: #FFF;">Send 📨</button>
+                    </div>
+                </div>
+        </form>
+    </div>    
+</div>
+
+
+    
+
+  <%- include('template/end')%>

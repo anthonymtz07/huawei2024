@@ -1,0 +1,41 @@
+<%- include('template/title')%>
+<link rel="stylesheet" href="/static/css/index.css">
+
+<div class="container" style="margin-bottom: 5%;">
+    <div class="row" style="display: flex; align-items: center; justify-content: center;">
+        <form style="margin-top: 5%; background-color: #FFF; border-radius: 22px; width: 950px; height: auto;"
+         action="/mongodb/more_information" method="post">
+        <center>
+            <img src="static/img/huawei_logo.png" alt="404Image" width="200px" height="200px">
+        </center>
+            <!--Personal Data-->
+            <div class="row">
+                <h3 class="mb-3" style="text-align: center; color: #000;">More Information</h3>
+                <!--Yourselft-->
+                <div class="col-12 mb-3">
+                    <label for="yourself" class="form-label" style="color: #000;">Describe yourself:</label>
+                    <textarea class="form-control mb-2" style="border-color: #000;" id="yourself" name="yourself" rows="7" cols="50" 
+                    placeholder="Write here..."></textarea>
+                </div>
+                <!--Razons-->
+                <div class="col-12 mb-3">
+                    <label for="razons" class="form-label" style="color: #000;">Why do you want to stay in Huawei?:</label>
+                    <textarea class="form-control mb-2" style="border-color: #000;" id="razons" name="razons" rows="7" cols="50" 
+                    placeholder="Write here..."></textarea>
+                </div>
+                <!--Goals-->
+                <div class="col-12 mb-3">
+                    <label for="goals" class="form-label" style="color: #000;">What are your goals at Huawei?:</label>
+                    <textarea class="form-control mb-2" style="border-color: #000;" id="goals" name="goals" rows="7" cols="50" 
+                    placeholder="Write here..."></textarea>
+
+                    <button type="submit" class="btn col-1 mb-5" style="background-color:  #B5070E; color: #FFF;">Next</button>
+                </div>
+        </form>
+    </div>    
+</div>
+
+
+    
+
+  <%- include('template/end')%>

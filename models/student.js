@@ -34,7 +34,17 @@ let Student = new Schema ({
     },
     englishlevel: {
         type: String
+    },
+    yourself:{
+        type:String
+    },
+    razons:{
+        type: String
+    },
+    goals:{
+        type: String
     }
+
 },
 {
     collection: 'new_students'
