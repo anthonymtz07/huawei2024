@@ -2,7 +2,9 @@ const express = require('express');
 const mongodb = express.Router();
 
 let Student = require('../models/student');
-let Comment = require('../models/comments')
+let Student_description = require('../models/self_student');
+let English_test = require('../models/english_test');
+let Comment = require('../models/comments');
 
 
 /*Students*/
@@ -20,16 +22,41 @@ mongodb.post('/student_information',(req,res)=>{
         studentlevel: req.body.studentlevel,
         englishlevel: req.body.englishlevel,
     });
-    //console.log('res: '+student.studentemail);
-    res.redirect('/internMoreinformation');
+    console.log(student);
+    //res.redirect('/internMoreinformation');
+    res.render('moreInformation_form',{student:student});
 });
 
 
 mongodb.post('/more_information',(req,res)=>{
-    res.redirect('/englishTest')
+    const description = new Student_description({
+        studentemail: req.body.studentemail,
+        yourself: req.body.yourself,
+        razons: req.body.razons,
+        goals: req.body.goals
+    });
+
+    console.log(description);
+    res.render('english_test',{description: description});
 });
 
 mongodb.post('/english_test',(req,res)=>{
+    const english_test = new English_test ({
+        answer1: req.body.answer1,
+        answer2: req.body.answer2,
+        answer3: req.body.answer3,
+        answer4: req.body.answer4,
+        answer5: req.body.answer5,
+        answer6: req.body.answer6,
+        answer7: req.body.answer7,
+        answer8: req.body.answer8,
+        answer9: req.body.answer9,
+        answer10: req.body.answer10,
+        studentemail: req.body.studentemail,
+    })
+
+    console.log(english_test);
+
     res.redirect('/')
 });
 
