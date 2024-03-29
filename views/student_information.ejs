@@ -1,0 +1,275 @@
+<%- include('template/title')%>
+<link rel="stylesheet" href="/static/css/index.css">
+<div class="row">
+    <!--Presentation-->
+    <div class="col-6" style="background-color: black; display: flex; align-items: center; justify-content: center;">
+    <center>
+        <p style="font-size: 62px;">
+            <span style="color: #B5070E;">Applicants</span>
+            <span style="color: #FFF;">for an</span>
+            <span style="color: #B5070E;">oportunity</span>
+            <span style="color: #FFF;">at Huawei</span>
+        </p>
+        <a href="/admin/student_information" class="btn col-2" style="background-color: #B5070E; color: #FFF">Reload</a>
+    </center>
+    </div>
+    <div class="col-6" style="padding: 0; border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
+    <img src="/static/img/background/Student.jpg" class="card-img-top" alt="404image">
+    </div>
+</div>
+
+<div class="container" style="margin-bottom: 5%;">
+    <div class="row">
+      <div class="col-12 mb-5">
+        <button class="btn" onclick="btnB1()" style="background-color: rgb(2, 107, 2); color: #FFF;">B1</button>
+        <button class="btn" onclick="btnB2()" style="background-color: rgb(9, 177, 9); color: #FFF;">B2</button>
+
+        <button class="btn" onclick="btnC1()" style="background-color:#e90d14; color: #FFF;">C1</button>
+        <button class="btn" onclick="btnC2()" style="background-color: #B5070E; color: #FFF;">C2</button>
+        <script src="/static/js/btnEnglishLevel.js"></script>
+    </div>
+
+    <!--B1-->
+    <div class="card mb-5" id="tableB1" style="display: block; border-color: #000;">
+        <div class="card-head" style="text-align: center;">
+            <h1 style="margin-top: 2%;">
+                Applicants B1
+            </h1>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                  <tr style="background-color: #000; color: #FFF; ">
+                    <th scope="col">No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">English level</th>
+                    <th scope="col">Info.</th>
+                  </tr>
+                </thead>
+                <tbody style="border-color: #000;">
+                  <%
+                  var i= 1;
+                  studentB1.forEach((student)=>{
+                      if(i%2){
+                  %>
+                  <tr>
+                    <th scope="row"><%=i%></th>
+                    <td><%=student.studentname%></td>
+                    <td><%=student.studentlastname%></td>
+                    <td><%=student.studentemail%></td>
+                    <td><%=student.englishlevel%></td>
+                    <td>
+                        <a href="/<%=student._id%>" type="button" class="btn" style="background-color: #B5070E; color: #FFF;">Info.</a>
+                    </td>
+                  </tr>
+                  <%
+                      }
+                      else{
+                  %>
+                  <tr style="background-color: #e9bfc1;">
+                    <th scope="row"><%=i%></th>
+                    <td><%=student.studentname%></td>
+                    <td><%=student.studentlastname%></td>
+                    <td><%=student.studentemail%></td>
+                    <td><%=student.englishlevel%></td>
+                    <td>
+                        <a href="/<%=student._id%>" type="button" class="btn" style="background-color: #B5070E; color: #FFF;">Info.</a>
+                    </td>
+                  </tr>
+                  <%
+                      }
+                    i = i+1;
+                  });%>
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <!--B2-->
+    <div class="card mb-5" id="tableB2" style="display: none; border-color: #000;">
+      <div class="card-head" style="text-align: center;">
+          <h1 style="margin-top: 2%;">
+              Applicants B2
+          </h1>
+      </div>
+      <div class="card-body">
+          <table class="table">
+              <thead>
+                <tr style="background-color: #000; color: #FFF;">
+                  <th scope="col">No.</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Last name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">English level</th>
+                  <th scope="col">Info.</th>
+                </tr>
+              </thead>
+              <tbody style="border-color: #000;">
+                <%
+                var j= 1;
+                studentB2.forEach((student)=>{
+                    if(j%2){
+                %>
+                <tr>
+                  <th scope="row"><%=j%></th>
+                  <td><%=student.studentname%></td>
+                  <td><%=student.studentlastname%></td>
+                  <td><%=student.studentemail%></td>
+                  <td><%=student.englishlevel%></td>
+                  <td>
+                      <a href="/<%=student._id%>" type="button" class="btn" style="background-color: #B5070E; color: #FFF;">Info.</a>
+                  </td>
+                </tr>
+                <%
+                    }
+                    else{
+                %>
+                <tr style="background-color: #e9bfc1;">
+                  <th scope="row"><%=j%></th>
+                  <td><%=student.studentname%></td>
+                  <td><%=student.studentlastname%></td>
+                  <td><%=student.studentemail%></td>
+                  <td><%=student.englishlevel%></td>
+                  <td>
+                      <a href="/<%=student._id%>" type="button" class="btn" style="background-color: #B5070E; color: #FFF;">Info.</a>
+                  </td>
+                </tr>
+                <%
+                    }
+                  j = j+1;
+                });%>
+              </tbody>
+            </table>
+      </div>
+    </div>
+
+        <!--C1-->
+  <div class="card mb-5" id="tableC1" style="display: none; border-color: #000;">
+    <div class="card-head" style="text-align: center;">
+        <h1 style="margin-top: 2%;">
+            Applicants C1
+        </h1>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr style="background-color: #000; color: #FFF;">
+                <th scope="col">No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Email</th>
+                <th scope="col">English level</th>
+                <th scope="col">Info.</th>
+              </tr>
+            </thead>
+            <tbody style="border-color: #000;">
+              <%
+              var k= 1;
+              studentC1.forEach((student)=>{
+                  if(k%2){
+              %>
+              <tr>
+                <th scope="row"><%=k%></th>
+                <td><%=student.studentname%></td>
+                <td><%=student.studentlastname%></td>
+                <td><%=student.studentemail%></td>
+                <td><%=student.englishlevel%></td>
+                <td>
+                    <a href="/<%=student._id%>" type="button" class="btn" style="background-color: #B5070E; color: #FFF;">Info.</a>
+                </td>
+              </tr>
+              <%
+                  }
+                  else{
+              %>
+              <tr style="background-color: #e9bfc1;">
+                <th scope="row"><%=k%></th>
+                <td><%=student.studentname%></td>
+                <td><%=student.studentlastname%></td>
+                <td><%=student.studentemail%></td>
+                <td><%=student.englishlevel%></td>
+                <td>
+                    <a href="/<%=student._id%>" type="button" class="btn" style="background-color: #B5070E; color: #FFF;">Info.</a>
+                </td>
+              </tr>
+              <%
+                  }
+                k = k+1;
+              });%>
+            </tbody>
+          </table>
+    </div>
+  </div>
+
+  <!--C2-->
+  <div class="card mb-5" id="tableC2" style="display: none; border-color: #000;">
+    <div class="card-head" style="text-align: center;">
+        <h1 style="margin-top: 2%;">
+            Applicants C2
+        </h1>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr style="background-color: #000; color: #FFF;">
+                <th scope="col">No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Email</th>
+                <th scope="col">English level</th>
+                <th scope="col">Info.</th>
+              </tr>
+            </thead>
+            <tbody style="border-color: #000;">
+              <%
+              var l= 1;
+              studentC2.forEach((student)=>{
+                  if(l%2){
+              %>
+              <tr>
+                <th scope="row"><%=l%></th>
+                <td><%=student.studentname%></td>
+                <td><%=student.studentlastname%></td>
+                <td><%=student.studentemail%></td>
+                <td><%=student.englishlevel%></td>
+                <td>
+                    <a href="/<%=student._id%>" type="button" class="btn" style="background-color: #B5070E; color: #FFF;">Info.</a>
+                </td>
+              </tr>
+              <%
+                  }
+                  else{
+              %>
+              <tr style="background-color: #e9bfc1;">
+                <th scope="row"><%=l%></th>
+                <td><%=student.studentname%></td>
+                <td><%=student.studentlastname%></td>
+                <td><%=student.studentemail%></td>
+                <td><%=student.englishlevel%></td>
+                <td>
+                    <a href="/<%=student._id%>" type="button" class="btn" style="background-color: #B5070E; color: #FFF;">Info.</a>
+                </td>
+              </tr>
+              <%
+                  }
+                l = l+1;
+              });%>
+            </tbody>
+          </table>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<%- include('template/end')%>
+
+
+
+
+
+
+
+

@@ -6,11 +6,14 @@
         <form style="margin-top: 5%; background-color: #FFF; border-radius: 22px; width: 750px; height: auto;"
          action="/mongodb/english_test" method="post">
         <center>
-            <img src="static/img/huawei_logo.png" alt="404Image" width="200px" height="200px">
+            <img src="/static/img/huawei_logo.png" alt="404Image" width="200px" height="200px">
         </center>
             <!--Personal Data-->
             <div class="row">
                 <h3 class="mb-5" style="text-align: center; color: #000;">English test</h3>
+
+                <!--User-->
+                <input type="hidden" id="studentemail" name="studentemail" value="<%= description.studentemail%>">
 
                 <!--Question 1-->
                 <div class="col-6 mb-3" id="checkbox1">

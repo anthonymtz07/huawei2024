@@ -22,9 +22,15 @@ mongodb.post('/student_information',(req,res)=>{
         studentlevel: req.body.studentlevel,
         englishlevel: req.body.englishlevel,
     });
-    console.log(student);
+    student.save().then(()=>{
+        console.log('User: '+student.studentemail+' added');
+        res.render('moreInformation_form',{student:student});
+    })
+    .catch((err)=>{
+        console.error('Check this: '+err);
+    });
+    //console.log(student);
     //res.redirect('/internMoreinformation');
-    res.render('moreInformation_form',{student:student});
 });
 
 
@@ -35,9 +41,14 @@ mongodb.post('/more_information',(req,res)=>{
         razons: req.body.razons,
         goals: req.body.goals
     });
+    description.save().then(()=>{
+        console.log('User: '+description.studentemail+' updated');
+        res.render('english_test',{description: description});
 
-    console.log(description);
-    res.render('english_test',{description: description});
+    })
+    .catch((err)=>{
+        console.error('Check this: '+err);
+    });
 });
 
 mongodb.post('/english_test',(req,res)=>{
@@ -54,10 +65,13 @@ mongodb.post('/english_test',(req,res)=>{
         answer10: req.body.answer10,
         studentemail: req.body.studentemail,
     })
-
-    console.log(english_test);
-
-    res.redirect('/')
+    english_test.save().then(()=>{
+        console.log('user: '+english_test.studentemail+' had completed')
+        res.redirect('/')
+    })
+    .catch((err)=>{
+        console.error(err);
+    })
 });
 
 /*mongodb.post('/student_information_more',(req,res)=>{

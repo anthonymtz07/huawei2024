@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 const user = require('./user/user');
 const mongodbPath = require('./user/mongoDB');
+const admin = require('./user/admin');
 
 //MongoDB
 mongoose.connect('mongodb+srv://jesusAntonio:eVXPcFZnMtGbbEtS@cluster0.vmn8kj3.mongodb.net/huawei2024?retryWrites=true&w=majority&appName=Cluster0')
@@ -31,6 +32,9 @@ app.use(session({
 app.use('/',user);
 /*Mongo operations route*/
 app.use('/mongodb',mongodbPath);
+/*Admin operations*/
+app.use('/admin',admin);
+
 
 
 /*Port*/
