@@ -23,7 +23,6 @@ mongodb.post('/student_information',(req,res)=>{
         englishlevel: req.body.englishlevel,
     });
     student.save().then(()=>{
-        console.log('User: '+student.studentemail+' added');
         res.render('moreInformation_form',{student:student});
     })
     .catch((err)=>{
@@ -42,7 +41,6 @@ mongodb.post('/more_information',(req,res)=>{
         goals: req.body.goals
     });
     description.save().then(()=>{
-        console.log('User: '+description.studentemail+' updated');
         res.render('english_test',{description: description});
 
     })
@@ -66,30 +64,13 @@ mongodb.post('/english_test',(req,res)=>{
         studentemail: req.body.studentemail,
     })
     english_test.save().then(()=>{
-        console.log('user: '+english_test.studentemail+' had completed')
-        res.redirect('/')
+        res.render('correct_information',{english_test:english_test});
     })
     .catch((err)=>{
+        res.render('incorrect_information');
         console.error(err);
     })
 });
-
-/*mongodb.post('/student_information_more',(req,res)=>{
-    student({
-        yourself: req.body.yourself,
-        razons: req.body.razons,
-        goals: req.body.goals
-    });
-    student.save()
-    .then(()=>{
-        res.redirect('/');
-        console.log("Archivos enviados:\n"+student);
-    })
-    .catch((err)=>{
-        console.error('Check this information -> : '+err);
-    });
-});*/
-
 
 
 

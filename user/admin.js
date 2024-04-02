@@ -1,7 +1,11 @@
 const express = require('express');
 const admin = express.Router();
 let Student = require('../models/student');
+let Comment = require('../models/comments');
 
+admin.get('/home',(req,res)=>{
+    res.render('admin_home');
+});
 
 admin.get('/student_information',(req,res)=>{
     Student.find().where('englishlevel').equals('B1').then((studentB1)=>{
@@ -27,5 +31,13 @@ admin.get('/student_information',(req,res)=>{
     });
 });
 
+admin.get('/comments',(req,res)=>{
+    Comment.find().then((comment)=>{
+        res.render('comments',{comment:comment});
+    }).
+    catch((err)=>{
+        console.error(err);
+    });
+});
 
 module.exports = admin;

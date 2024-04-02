@@ -43,7 +43,7 @@ let Student = new Schema ({
     },
     goals:{
         type: String
-    }
+    },
 
 },
 {
