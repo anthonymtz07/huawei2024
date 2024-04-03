@@ -72,20 +72,26 @@ mongodb.post('/english_test',(req,res)=>{
     })
 });
 
-
-
-
 /*Comments*/
 mongodb.post('/comments',(req,res)=>{
-    Comment.create(req.body).then((data)=>{
-        console.log("Comment added...\n["+data+"]");
-        console.log(data);
-        res.send(data);
-        //res.redirect('/');
-    })
-    .catch((err)=>{
-        console.error("Check this information: "+err);
-    })
+    const comments = new Comment({
+        comment: req.body.comment
+    });
+    comments.save().then(()=>{
+        res.redirect('/interns_feedback');
+    }).catch((err)=>{
+        console.error(err);
+    });
+});
+
+/*Delete comments*/
+mongodb.get('/delete/:id',(req,res)=>{
+    var id = req.params.id;
+    Comment.findByIdAndDelete(id).then(()=>{
+        res.redirect('/admin/comments');
+    }).catch((err)=>{
+        console.error(err);
+    });
 });
 
 
