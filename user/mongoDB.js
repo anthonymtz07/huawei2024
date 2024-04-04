@@ -1,5 +1,7 @@
 const express = require('express');
 const mongodb = express.Router();
+var fs = require('fs')
+var path = require('path');
 
 let Student = require('../models/student');
 let Student_description = require('../models/self_student');
@@ -9,7 +11,7 @@ let Comment = require('../models/comments');
 
 /*Students*/
 
-mongodb.post('/student_information',(req,res)=>{
+mongodb.post('/student_information',(req,res, next)=>{
     const student = new Student({
         studentname: req.body.studentname,
         studentlastname: req.body.studentlastname,
@@ -21,8 +23,14 @@ mongodb.post('/student_information',(req,res)=>{
         studentuniversity: req.body.studentuniversity,
         studentlevel: req.body.studentlevel,
         englishlevel: req.body.englishlevel,
+        studentphoto: req.body.studentphoto
+        /*studentphoto: {
+            data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.studentphoto)),
+            contentType: 'image/png'
+        }*/
     });
     student.save().then(()=>{
+        console.log(student.studentphoto);
         res.render('moreInformation_form',{student:student});
     })
     .catch((err)=>{

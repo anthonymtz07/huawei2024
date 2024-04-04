@@ -38,16 +38,14 @@ let Student = new Schema ({
     yourself:{
         type:String
     },
-    razons:{
+    studentphoto:{
+        data: Buffer,
         type: String
-    },
-    goals:{
-        type: String
-    },
+    }
 
 },
 {
-    collection: 'new_students'
+    collection: 'student_platform'
 });
 
 module.exports = mongoose.model('Student', Student);

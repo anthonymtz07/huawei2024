@@ -40,4 +40,8 @@ admin.get('/comments',(req,res)=>{
     });
 });
 
+admin.get('/add_feedback',(req,res)=>{
+    res.render('add_internship_feedback');
+});
+
 module.exports = admin;
