@@ -1,0 +1,72 @@
+<%- include('template/title_admin')%>
+<link rel="stylesheet" href="/static/css/index.css">
+
+<div class="container" style="margin-bottom: 5%;">
+    <div class="row" style="display: flex; align-items: center; justify-content: center;">
+        <form style="margin-top: 5%; background-color: #FFF; border-radius: 22px; width: 950px; height: auto;"
+         action="/mongodb/newAdmin" method="post">
+        <center>
+            <img src="/static/img/huawei_logo.png" alt="404Image" width="200px" height="200px">
+        </center>
+            <!--Personal Data-->
+            <div class="row">
+                <h3 class="mb-3" style="text-align: center; color: #000;">New user</h3> 
+                <!--Name Admin-->
+                <div class="col-5 mb-3">
+                    <label for="adminname" class="form-label" style="color: #000;">Name:</label>
+                    <input type="text" class="form-control" id="adminname" name="adminname" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"
+                    placeholder="Complete name" style="border-color: #000;" title="Please enter only letters" required>
+                </div>
+                <!--Last Name-->
+                <div class="col-5 mb-3">
+                    <label for="adminlastname" class="form-label" style="color: #000;">Last name:</label>
+                    <input type="text" class="form-control" id="adminlastname" name="adminlastname" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"
+                    placeholder="Complete last name" style="border-color: #000;" title="Please enter only letters" required>
+                </div>
+                <!--Age-->
+                <div class="col-2 mb-3">
+                    <label for="adminage" class="form-label" style="color: #000;">Age:</label>
+                    <input type="number" placeholder="Age" class="form-control" id="adminage" name="adminage" 
+                    min="18" max="60" required title="range 18 - 60 years" style="border-color: #000;">
+                </div>
+                <!--Phone-->
+                <div class="col-6 mb-3">
+                    <label for="adminphone" class="form-label" style="color: #000;">Phone:</label>
+                    <input type="tel" class="form-control" id="adminphone" name="adminphone" pattern="[0-9]+" 
+                    placeholder="Telephone number" style="border-color: #000;" title="Please enter only numbers" required>
+                </div>
+                <!--Email-->
+                <div class="col-6 mb-3">
+                    <label for="adminemail" class="form-label" style="color: #000;">Email:</label>
+                    <input type="email" class="form-control" id="adminemail" name="adminemail" style="border-color: #000;" placeholder="Email address" required>
+                </div>
+            </div>
+
+            <!--Password-->
+            <div class="row">
+                <!--Password-->
+                <div class="col-6 mb-3">
+                    <label for="adminpassword" class="form-label" style="color: #000;">Password:</label>
+                    <input type="password" class="form-control" id="adminpassword" name="adminpassword"
+                    placeholder="Write the password" style="border-color: #000;" title="Write the password" required>
+                </div>
+               
+                <!--photo-->
+                <div class="col-6 mb-5">
+                    <label for="adminphoto" class="form-label" style="color: #000;">Photo:</label>
+                    <input type="file" class="form-control" id="adminphoto" style="border-color: #000;" name="adminphoto" accept="image/png">
+                </div>
+            </div>
+    
+            <div class="col-12 mb-5" style="text-align: center; margin-top: 3%;">
+                <button type="submit" class="btn col-1" style="background-color:  #B5070E; color: #FFF">Next</button>
+                <a type="button" class="btn btn-secondary" href="/admin/home">Back</a>
+            </div>
+        </form>
+    </div>    
+</div>
+
+
+    
+
+  <%- include('template/end')%>

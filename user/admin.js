@@ -2,6 +2,8 @@ const express = require('express');
 const admin = express.Router();
 let Student = require('../models/student');
 let Comment = require('../models/comments');
+let NewAdmin = require('../models/users_admin');
+
 
 admin.get('/home',(req,res)=>{
     res.render('admin_home');
@@ -40,8 +42,13 @@ admin.get('/comments',(req,res)=>{
     });
 });
 
+//---------------------------
 admin.get('/add_feedback',(req,res)=>{
     res.render('add_internship_feedback');
+});
+
+admin.get('/add_user',(req,res)=>{
+    res.render('new_admin_form');
 });
 
 module.exports = admin;

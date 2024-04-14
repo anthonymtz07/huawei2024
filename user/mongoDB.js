@@ -7,6 +7,9 @@ let Student = require('../models/student');
 let Student_description = require('../models/self_student');
 let English_test = require('../models/english_test');
 let Comment = require('../models/comments');
+let NewAdmin = require('../models/users_admin');
+let InterFeedback = require('../models/internfeedback');
+const { mongo } = require('mongoose');
 
 
 /*Students*/
@@ -89,6 +92,39 @@ mongodb.post('/comments',(req,res)=>{
         res.redirect('/interns_feedback');
     }).catch((err)=>{
         console.error(err);
+    });
+});
+
+/*New admin*/
+mongodb.post('/newAdmin',(req,res)=>{
+    const newAdmin = new NewAdmin({
+        adminname: req.body.adminname,
+        adminlastname: req.body.adminlastname,
+        adminage: req.body.adminage,
+        adminphone: req.body.adminphone,
+        adminemail: req.body.adminemail,
+        adminpassword: req.body.adminpassword,
+        adminphoto: req.body.adminphoto
+    });
+    newAdmin.save().then(()=>{
+        res.render('correct_information_admin')
+    })
+    .catch((err)=>{
+        console.error(err);
+    });
+});
+
+mongodb.post('/internFeedback',(req,res)=>{
+    const interFeedback = new InterFeedback({
+        name: req.body.name,
+        lastname: req.body.lastname,
+        comment: req.body.comment
+    });
+    interFeedback.save().then(()=>{
+        res.redirect('/admin/home');
+    })
+    .catch((err)=>{
+        console.error(err)
     });
 });
 
