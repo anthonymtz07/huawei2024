@@ -17,67 +17,67 @@
 </div>
 
 <div class="container">
-    <div class="row">
-      
-      <!--Comments-->
-      <div class="col-12">
-        <!--form-->
-        <form action="/mongodb/comments" method="post">
-         <h2>
-          Do you have any comment? 
-        </h2>
-        <textarea class="form-control mb-2" style="border-color: #000;" id="comment" name="comment" rows="4" cols="50" placeholder="Write your comment here..."></textarea>
-        <button type="submit" class="btn mb-5" style="background-color: #B5070E; color: #FFF;">Send</button>
-      </form>
-      </div>
-      
-        <div class="col-12">
-            <div class="card mb-3" style="border-color: #000;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="static/img/perfiles/people1.jpg" class="img-fluid rounded-start" alt="404Error">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                        <h4 class="card-text mb-3" style="color: #B5070E;">Maria Fernanda</h4>
-                        <h6 class="card-text" >I liked this part of being a Huawei intern at TAC a lot, I've learned a lot, take an interest in them, I highly recommend them :)</h6>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
+    <div class="row"  style="display: flex; align-items: center; justify-content: center;">
+      <!--form-->
+      <form action="/mongodb/internFeedback" method="post">
+        <div class="row">
+          <h2>
+            Do you have any comment? 
+          </h2>
+          <!--Name-->
+          <input type="hidden" name="user" value="user">
+          <div class="col-6 mb-3">
+            <label for="name" class="form-label" style="color: #000;">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"
+            placeholder="Please write your name" style="border-color: #000;" title="Please enter only letters" required>
+          </div>
+          <!--Last Name-->
+          <div class="col-6 mb-3">
+            <label for="lastname" class="form-label" style="color: #000;">Last name:</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"
+            placeholder="Please write your last name" style="border-color: #000;" title="Please enter only letters" required>
+          </div>
+          <!--Comments-->
+          <div class="col-12 mb-2">
+              <label for="comment" class="form-label" style="color: #000;">Comment:</label>
+              <textarea class="form-control mb-2" style="border-color: #000;" id="comment" name="comment" rows="4" cols="50" placeholder="Write your comment here..." required></textarea>    
+          </div>
+          <div class="col-6 mb-3">
+            <label for="studentphoto" class="form-label" style="color: #000;">Photo:</label>
+            <input type="file" class="form-control" id="studentphoto" style="border-color: #000;" name="studentphoto" accept="image/png">
+          </div>
+          <div class="col-6 mb-3">
+            <button type="submit" class="btn mb-5" style="background-color: #B5070E; color: #FFF; margin-top: 5%;">Send</button>
+          </div>
 
-        <div class="col-12">
-            <div class="card mb-3" style="border-color: #000;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="static/img/perfiles/people2.jpg" class="img-fluid rounded-start" alt="404Error">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                        <h4 class="card-text mb-3" style="color: #B5070E;">Jose Armando</h4>
-                        <h6 class="card-text" >Huawei is a very pleasant experience, you enter a world where they teach you to work as a team and be the best version of yourself</h6>
-                    </div>
-                  </div>
+        </div>
+    </form>
+    
+      <!---->
+    <%
+      interns.forEach((interns)=>{
+    %>
+    <!--Card-->
+    <div class="col-12">
+        <div class="card mb-3" style="border-color: #000;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="static/img/perfiles/people3.jpg" class="img-fluid rounded-start" alt="404Error">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h4 class="card-text mb-3" style="color: #B5070E;"><%= interns.name%> <%= interns.lastname%></h4>
+                    <h6 class="card-text" ><%= interns.comment%></h6>
                 </div>
+              </div>
             </div>
         </div>
+    </div>
+    <%
+      });
+    %>
 
-        <div class="col-12">
-            <div class="card mb-3" style="border-color: #000;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="static/img/perfiles/people3.png" class="img-fluid rounded-start" alt="404Error">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                        <h4 class="card-text mb-3" style="color: #B5070E;">Patricia Garcia</h4>
-                        <h6 class="card-text" >It is one of my best experiences, the attention you give us and the empathy you have with all of us despite the fact that even college students are not which company has, I am grateful to be one of the participants chosen among many</h6>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 

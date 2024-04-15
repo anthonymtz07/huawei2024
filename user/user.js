@@ -1,5 +1,6 @@
 const express = require('express');
 const rute = express.Router();
+let InterFeedback = require('../models/internfeedback');
 
 rute.get('/',(req,res)=>{
     res.render('index');
@@ -18,12 +19,20 @@ rute.get('/intern_form',(req,res)=>{
 });
 
 rute.get('/interns_feedback',(req,res)=>{
-    res.render('interns_feedback')
+    InterFeedback.find().then((interns)=>{
+        res.render('interns_feedback',{interns:interns});
+    })
+    .catch((err)=>{
+        console.log(err)
+    });
 });
+
 
 rute.get('/news_page',(req,res)=>{
     res.render('news_page')
 });
+
+
 
 //Export
 module.exports=rute;

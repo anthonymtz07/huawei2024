@@ -5,9 +5,16 @@
     <div class="col-6" style="background-color: black; display: flex; align-items: center; justify-content: center;">
     <center>
         <p style="font-size: 50px;">
+          <%
+            admin.forEach((admin)=>{
+
+          %>
             <span style="color: #B5070E;">Welcome</span>
-            <span style="color: #FFF;">Francisco</span>
+            <span style="color: #FFF;"><%=admin.adminname%></span>
         </p>
+        <%
+      });
+        %>
     </center>
     </div>
     <div class="col-6" style="padding: 0; border-top-right-radius: 10px; border-bottom-right-radius: 10px;">
@@ -26,18 +33,6 @@
           <div class="card-header" style="text-align: center;">
             <img src="/static/img/applicants.png" alt="404image" height="150px" width="150px">
             <h4>Check applicants</h4>
-          </div>
-          <div class="card-body mb-3" style="text-align: center;">
-            <a href="/admin/student_information" type="submit" class="btn" style="background-color: #B5070E; color: #FFF;">Check</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-4 mb-3">
-        <div class="card" style="border-color: #000;">
-          <div class="card-header" style="text-align: center;">
-            <img src="/static/img/accepted.png" alt="404image" height="150px" width="150px">
-            <h4>Accepted Applicants</h4>
           </div>
           <div class="card-body mb-3" style="text-align: center;">
             <a href="/admin/student_information" type="submit" class="btn" style="background-color: #B5070E; color: #FFF;">Check</a>
@@ -80,9 +75,6 @@
           </div>
         </div>
       </div>
-
-      
-
   </div>
 </div>
 

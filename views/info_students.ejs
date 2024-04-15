@@ -1,0 +1,251 @@
+<%- include('template/title_admin')%>
+<link rel="stylesheet" href="/static/css/index.css">
+
+<div class="container">
+    <div class="row" style="display: flex; align-items: center; justify-content: center;">
+
+        <div class="card mb-5">
+            <div class="card-header">
+                <center>
+                    <img src="/static/img/perfiles/people3.jpg" alt="404Error" width="500px" height="auto">
+                </center>
+            </div>
+            <div class="card-body">
+                <h4>
+                    Basic Information 
+                </h4>
+                <!--form-->
+                <form action="/" method="post">
+                    <div class="row mb-5">
+
+                        <%
+                            student.forEach((student)=>{
+                        %>
+
+                        <!--Name-->
+                        <div class="col-5 mb-3">
+                            <label for="studentname" class="form-label" style="color: #000;">Name:</label>
+                            <input type="text" class="form-control" id="studentname" name="studentname" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"
+                            placeholder="Please write your name" style="border-color: #000;" title="Please enter only letters" required
+                            value="<%= student.studentname%>">
+                        </div>
+                        <!--Last Name-->
+                        <div class="col-5 mb-3">
+                            <label for="studentlastname" class="form-label" style="color: #000;">Last name:</label>
+                            <input type="text" class="form-control" id="studentlastname" name="studentlastname" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"
+                            placeholder="Please write your last name" style="border-color: #000;" title="Please enter only letters" required
+                            value="<%= student.studentlastname%>">
+                        </div>
+                        <!--Age-->
+                        <div class="col-2 mb-3">
+                            <label for="studentage" class="form-label" style="color: #000;">Age:</label>
+                            <input type="number" placeholder="Write your age" class="form-control" id="studentage" name="studentage" 
+                            min="18" max="60" required title="range 18 - 60 years" style="border-color: #000;" value="<%= student.studentage%>">
+                        </div>
+                        <!--Phone-->
+                        <div class="col-6 mb-3">
+                            <label for="studentphone" class="form-label" style="color: #000;">Phone:</label>
+                            <input type="tel" class="form-control" id="studentphone" name="studentphone" pattern="[0-9]+" 
+                            placeholder="Your telephone number" style="border-color: #000;" title="Please enter only numbers" required
+                            value="<%=student.studentphone%>">
+                        </div>
+                        <!--Email-->
+                        <div class="col-6 mb-3">
+                            <label for="studentemail" class="form-label" style="color: #000;">Email:</label>
+                            <input type="email" class="form-control" id="studentemail" name="studentemail" style="border-color: #000;" placeholder="Your email" required
+                            value="<%=student.studentemail%>">
+                        </div>
+
+                         <!--career-->
+                         <div class="col-6 mb-3">
+                            <label for="studentcareer" class="form-label" style="color: #000;">Career:</label>
+                            <input type="text" class="form-control" id="studentcareer" name="studentcareer" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"
+                            placeholder="What's your career?" style="border-color: #000;" title="Please enter only letters" required
+                            value="<%=student.studentcareer%>">
+                        </div>
+                        <!--stat year-->
+                        <div class="col-3 mb-3">
+                            <label for="startyearcareer" class="form-label" style="color: #000;">Start:</label>
+                            <p><%=student.startyearcareer.toString().substring(0, 16)%></p>
+                            <input type="hidden" value="<%=student.startyearcareer%>">
+                        </div>
+                        <!--End year-->
+                        <div class="col-3 mb-3">
+                            <label for="endyearcareer" class="form-label" style="color: #000;">End:</label>
+                            <p><%=student.endyearcareer.toString().substring(0, 16)%></p>
+                            <input type="hidden" value="<%=student.endyearcareer%>">
+                        </div>
+                        <!--University-->
+                        <div class="col-6 mb-3">
+                            <label for="studentuniversity" class="form-label" style="color: #000;">University:</label>
+                            <input type="text" class="form-control" id="studentuniversity" name="studentuniversity" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"
+                            placeholder="What's your university?" style="border-color: #000;" title="Please enter only letters" required
+                            value="<%=student.studentuniversity%>">
+                        </div>
+                        <!--level-->
+                        <div class="col-3 mb-3">
+                            <label for="studentlevel" class="form-label" style="color: #000;">Grade:</label>
+                            <p><%=student.studentlevel%></p>
+                            <input type="hidden" value="<%=student.studentlevel%>">
+                        </div>
+                        <!--level-->
+                        <div class="col-3 mb-3">
+                            <label for="englishlevel" class="form-label" style="color: #000;">English level:</label>
+                            <p><%=student.englishlevel%></p>
+                            <input type="hidden" value="<%=student.englishlevel%>">
+                        </div>
+                    </div>
+                    <%
+                        });
+                    %>
+
+                    <div class="row mb-5">
+                        <h4>
+                            Razons:
+                        </h4>
+                        <%
+                        selfStudent.forEach((selfStudent)=>{
+                        %>
+                         <!--YourSelf-->
+                         <div class="col-12 mb-3" style="text-align: justify;">
+                            <label for="yourself" class="form-label" style="color: #000;">Description:</label>
+                            <p><%=selfStudent.yourself%></p>
+                            <input type="hidden" value="<%=selfStudent.yourself%>">
+                        </div>
+                        
+                        <!--Razons-->
+                        <div class="col-12 mb-3" style="text-align: justify;">
+                            <label for="razons" class="form-label" style="color: #000;">Why do you want to stay in Huawei?:</label>
+                            <p><%=selfStudent.razons%></p>
+                            <input type="hidden" value="<%=selfStudent.razons%>">
+                        </div>
+
+                        <!--Goals-->
+                        <div class="col-12 mb-3" style="text-align: justify;">
+                            <label for="goals" class="form-label" style="color: #000;">What are your goals at Huawei?:</label>
+                            <p><%=selfStudent.goals%></p>
+                            <input type="hidden" value="<%=selfStudent.goals%>">
+                        </div>
+                    </div>
+                    <%
+                        });
+                    %>
+
+                    <div class="row mb-5">
+                        <h4>Test English</h4>
+                        <%
+                            var score = 0;
+                            english.forEach((english)=>{
+                                if(english.answer1 =="Only for half an hour"){
+                                    score = score+1;
+                                }
+                                if(english.answer2 =="We can't decide"){
+                                    score = score+1;
+                                }
+                                if(english.answer3 =="Would you like some help?"){
+                                    score = score+1;
+                                }
+                                if(english.answer4 =="I'll just check for you"){
+                                    score = score+1;
+                                }
+                                if(english.answer5 =="I'm too tired"){
+                                    score = score+1;
+                                }
+                                if(english.answer6 =="so"){
+                                    score = score+1;
+                                }
+                                if(english.answer7 =="once"){
+                                    score = score+1;
+                                }
+                                if(english.answer8 =="edge"){
+                                    score = score+1;
+                                }
+                                if(english.answer9 =="mean"){
+                                    score = score+1;
+                                }
+                                if(english.answer10 =="with"){
+                                    score = score+1;
+                                }
+                        %>
+                        <div class="col-4 mb-3">
+                            <label for="answer1" class="form-label" style="color: #000;">1. Can I park here?:</label>
+                            <p><b>Answer:</b> <%=english.answer1%></p>
+                            <input type="hidden" value="<%=english.answer1%>">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="answer2" class="form-label" style="color: #000;">2. What colour will you pain the children's bedroom?:</label>
+                            <p><b>Answer:</b> <%=english.answer2%></p>
+                            <input type="hidden" value="<%=english.answer2%>">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="answer3" class="form-label" style="color: #000;">3. I can understand this email:</label>
+                            <p><b>Answer:</b> <%=english.answer3%></p>
+                            <input type="hidden" value="<%=english.answer3%>">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="answer4" class="form-label" style="color: #000;">4. I'd like two tickets for tomorrow night:</label>
+                            <p><b>Answer:</b> <%=english.answer4%></p>
+                            <input type="hidden" value="<%=english.answer4%>">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="answer5" class="form-label" style="color: #000;">5. Shall we go to the gym now?:</label>
+                            <p><b>Answer:</b> <%=english.answer5%></p>
+                            <input type="hidden" value="<%=english.answer5%>">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="answer6" class="form-label" style="color: #000;">6. His eyes were .... bad that he couldn't read the number plate of the car in front:</label>
+                            <p><b>Answer:</b> <%=english.answer6%></p>
+                            <input type="hidden" value="<%=english.answer6%>">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="answer7" class="form-label" style="color: #000;">7. The company need to decide .... and for all what it's position is on this point:</label>
+                            <p><b>Answer:</b> <%=english.answer7%></p>
+                            <input type="hidden" value="<%=english.answer7%>">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="answer8" class="form-label" style="color: #000;">8. Don't put your cup on the ..... if the table - someone will knock it off:</label>
+                            <p><b>Answer:</b> <%=english.answer8%></p>
+                            <input type="hidden" value="<%=english.answer8%>">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="answer9" class="form-label" style="color: #000;">9. I'm sorry. I didn't ..... to disturb you:</label>
+                            <p><b>Answer:</b> <%=english.answer9%></p>
+                            <input type="hidden" value="<%=english.answer9%>">
+                        </div>
+
+                        <div class="col-4 mb-3">
+                            <label for="answer10" class="form-label" style="color: #000;">10. The singer ended the concert ..... her most popular song:</label>
+                            <p><b>Answer:</b> <%=english.answer10%></p>
+                            <input type="hidden" value="<%=english.answer1%>">
+                        </div>
+
+                        <div class="col-12">
+                            <h2>Score: <%=score%></h2>
+                        </div>
+                    </div>
+                </div>
+            <div class="card-footer">
+                <div class="row mb-3">
+                    <!--Checar-->
+                    <div class="col-12">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<%=english.studentemail%>"class="btn col-2 " style="color: #FFF; background-color: #000;">Accept</a>
+                        <a href="/mongodb/deleteUser/<%=english.studentemail%>"class="btn col-2 " style="color: #FFF; background-color: #B5070E;">Delete</a>
+                        <a href="/admin/student_information"class="btn btn-secondary col-2 " style="color: #FFF;">Back</a>
+                    </div>
+                    <%});%>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+<%- include('template/end')%>

@@ -5,15 +5,16 @@
     <!--Presentation-->
     <div class="col-6" style="background-color: black; display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <img src="static/img/perfiles/logo_user.png" alt="404Imagen" width="150px" height="150px">
-        <form style="margin-top: 5%; margin-bottom: 5%; margin-left: 3%; margin-right: 3%;">
+        <form style="margin-top: 5%; margin-bottom: 5%; margin-left: 3%; margin-right: 3%;" 
+        action="/admin/login" method="post">
             <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label" style="color: white;">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="email" class="form-label" style="color: white;">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text" style="color: white;">We'll never share your email and password with anyone else.</div>
             </div>
             <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label" style="color: white;">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="password" class="form-label" style="color: white;">Password</label>
+            <input type="password" name="password" class="form-control" id="password">
             </div>
             <button type="submit" class="btn" style="background-color: #B5070E; color: #FFF;">Login</button>
         </form>

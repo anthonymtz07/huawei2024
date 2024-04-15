@@ -23,6 +23,11 @@ let Admin = new Schema ({
     adminphoto:{
         data: Buffer,
         type: String
+    },
+    type:{
+        type: String,
+        default: 'admin'
+
     }
 
 },

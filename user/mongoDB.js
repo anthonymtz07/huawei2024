@@ -18,6 +18,7 @@ mongodb.post('/student_information',(req,res, next)=>{
     const student = new Student({
         studentname: req.body.studentname,
         studentlastname: req.body.studentlastname,
+        studentage: req.body.studentage,
         studentphone: req.body.studentphone,
         studentemail: req.body.studentemail,
         studentcareer: req.body.studentcareer,
@@ -115,13 +116,19 @@ mongodb.post('/newAdmin',(req,res)=>{
 });
 
 mongodb.post('/internFeedback',(req,res)=>{
+    user = req.body.user;
     const interFeedback = new InterFeedback({
         name: req.body.name,
         lastname: req.body.lastname,
         comment: req.body.comment
     });
     interFeedback.save().then(()=>{
-        res.redirect('/admin/home');
+        //Check this function
+        if(user=="user"){
+            res.redirect('/interns_feedback')
+        }else{
+            res.redirect('/admin/home');
+        }
     })
     .catch((err)=>{
         console.error(err)
@@ -131,12 +138,32 @@ mongodb.post('/internFeedback',(req,res)=>{
 /*Delete comments*/
 mongodb.get('/delete/:id',(req,res)=>{
     var id = req.params.id;
-    Comment.findByIdAndDelete(id).then(()=>{
+    InterFeedback.findByIdAndDelete(id).then(()=>{
         res.redirect('/admin/comments');
     }).catch((err)=>{
         console.error(err);
     });
 });
 
+
+/*Delete user*/
+mongodb.get('/deleteUser/:email',(req,res)=>{
+    Student.findOneAndDelete({studentemail: req.params.email}).then(()=>{
+        Student_description.findOneAndDelete({studentemail: req.params.email}).then(()=>{
+            English_test.findOneAndDelete({studentemail: req.params.email}).then(()=>{
+                res.redirect('/admin/student_information')
+            })
+            .catch((err)=>{
+                console.error(err)
+            })
+        })
+        .catch((err)=>{
+            console.error(err)
+        })
+    })
+    .catch((err)=>{
+        console.error(err)
+    })
+});
 
 module.exports = mongodb;
